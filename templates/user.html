@@ -1,0 +1,9 @@
+
+<title>Welcome To Flask</title>
+<link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'my_css.css') }}">
+
+{% if context %}
+    <h1>Hey there, {{ context }} !</h1>
+{% else %}
+    <h1> There is no name in url!</h1>
+{% endif %}
