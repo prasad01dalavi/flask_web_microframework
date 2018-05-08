@@ -9,7 +9,7 @@ sudo apt-get install -y python-dev libmysqlclient-dev && sudo pip install mysqlc
 
 # Database Migration:
 # Run the following from the python shell:
->>from guestbook_database import db
->>db.create_all()
+>> from guestbook_database import db
+>> db.create_all()
 
 ```
