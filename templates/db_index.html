@@ -31,12 +31,15 @@
       </div>
 
       <!-- following will be executed in "http://127.0.0.1:5000/sign" url -->
-      <div class="page-header">
-        <h1>{{ name }}</h1>
-      </div>
-      <div class="well">
-        <p>{{ comment }}</p>
-      </div>
+      <!-- i.e. submission in sign url will be redirected to index page  -->
+      {% for data in all_data %}
+        <div class="page-header">
+          <h1>{{ data.name }}</h1>
+        </div>
+        <div class="well">
+          <p>{{ data.comment }}</p>
+        </div>
+      {% endfor %}
 
     </div> <!-- /container -->
 
