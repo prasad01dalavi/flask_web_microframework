@@ -6,6 +6,7 @@ Flask Tutorials
 pip install flask
 pip install flask-sqlalchemy
 sudo apt-get install -y python-dev libmysqlclient-dev && sudo pip install mysqlclient
+pip install flask-uploads
 
 # Database Migration:
 # Run the following from the python shell:
