@@ -15,6 +15,7 @@ def request_check():
     if request.method == 'POST':
         print 'Post request data:', request.data
         # I can get the posted data using request.data
+        # I can get the posted json data using request.json
         return 'You are using Post Method'
     else:
         return 'You probably using Get Method'

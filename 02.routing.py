@@ -22,6 +22,7 @@ def profile(username):              # username will be a variable
     return "<h2>Hey there, %s !<h2>" % username
 
 
+# specify the data type of argument e.g. int, string, float etc.
 @app.route('/post/<int:post_id>')   # http://127.0.0.1:5000/post/13
 def show_int(post_id):        # method name doesn't need to be same as url
     print 'Type of variable:', type(post_id), post_id

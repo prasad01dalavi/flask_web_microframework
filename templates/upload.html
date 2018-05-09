@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Flask Uploads</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2></h2>
+        <div class="panel panel-primary">
+            <div class="panel-heading"><h2>Flask Uploads</h2></div>
+            <div class="panel-body">
+                <form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
+                    <input type=file name=photo>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
