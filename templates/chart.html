@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {# script for jquery #}
+    
+  </head>
+
+  <body>
+  	<div class="ct-chart ct-perfect-fourth"></div>
+  	<script>  	
+  		var my_values = []	
+
+		function update_chart()
+		{
+		  $.get("http://127.0.0.1:5000/data", function(data){
+
+		  var check_it = new Array()
+		  my_values = data["my_data"]		
+          });
+
+			var data = {
+		   // A labels array that can contain any sort of values
+			labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+		   // Our series array that contains series objects or in this case series data arrays			
+			series: [my_values]
+			};
+
+			var options = {
+				width : 600,
+				height: 400
+			}
+			new Chartist.Line('.ct-chart', data, options);
+		}
+		
+		setInterval("update_chart()",2000)
+	</script>
+
+  </body>
+</html>

@@ -16,6 +16,7 @@ def upload():
     if request.method == 'POST' and 'photo' in request.files:
         filename = photos.save(request.files['photo'])
         print 'File saved successfully!'
+        # when uploaded file is saved it return the file name
         return filename
     # render the upload template when GET requested to the upload url
     return render_template('upload.html')

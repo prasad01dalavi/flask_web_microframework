@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql import func
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:lmtech123@localhost:3306/flask_db'
+app.config[
+    'SQLALCHEMY_DATABASE_URI'] = 'mysql://root:lmtech123@localhost:3306/flask_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # let me know the changes in the database but i don't want to know
 
@@ -15,6 +17,9 @@ class Comments(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20))
     comment = db.Column(db.String(200))
+
+    # time_created = Column(DateTime(timezone=True), server_default=func.now())
+    # time_updated = Column(DateTime(timezone=True), onupdate=func.now())
 
 
 @app.route('/')   # http://127.0.0.1:5000/
